@@ -1,0 +1,30 @@
+{
+    "name": "dancelynx\/weather",
+    "description": "A weather SDK",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "DanceLynx",
+            "email": "admin@sdc-studio.cn"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.2",
+        "mockery/mockery": "^1.4"
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "DanceLynx\\Weather\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DanceLynx\\Weather\\ServiceProvider"
+            ]
+        }
+    }
+}
