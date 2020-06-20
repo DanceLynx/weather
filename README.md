@@ -1,6 +1,6 @@
 <h1 align="center"> weather </h1>
 
-<p align="center"> A weather SDK.</p>
+<p align="center"> 一款基于高德地图的天气SDK</p>
 
 
 ## Installing
@@ -11,7 +11,28 @@ $ composer require dancelynx/weather -vvv
 
 ## Usage
 
-TODO
+注册到app中的providers里面
+```php
+DanceLynx\Weather\ServiceProvider::class,
+```
+在config/services.php里添加如下配置:
+```php
+'weather'=>[
+	'key'=>env("WEATHER_API"),
+],
+```
+然后在.env文件中添加
+```php
+WEATHER_API=xxxxxx
+```
+在代码里可以这样用:
+```php
+Route::get('/', function () {
+   $result = app('weather')->getWeather('西宁','all');
+   return response()->json($result);
+});
+
+```
 
 ## Contributing
 
